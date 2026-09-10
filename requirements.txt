@@ -1,5 +1,6 @@
 Flask
+Flask-Cors
 mysql-connector-python
-Werkzeug
-pandas
+gunicorn
 openpyxl
+pandas
