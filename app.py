@@ -41,12 +41,14 @@ ALLOWED_EXTENSIONS = {'csv', 'txt', 'xlsx'}
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-import os
-
-MYSQL_HOST = os.getenv("MYSQL_HOST")
-MYSQL_USER = os.getenv("MYSQL_USER")
-MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD")
-MYSQL_DATABASE = os.getenv("MYSQL_DATABASE")
+def get_db():
+    db = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="seating_db"
+    )
+    return db
 
 # ============================================
 # ACCESS CONTROL HELPERS
