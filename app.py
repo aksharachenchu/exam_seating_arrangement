@@ -602,6 +602,9 @@ def view_chart():
     return render_template('seating_chart.html', seating_data=seating_data)
 
 if __name__ == '__main__':
-  
+    # Debug mode shows stack traces and lets attackers run arbitrary code
+    # through the browser if the server is ever reachable from outside your
+    # own machine. It defaults to OFF now. Turn it on only for local dev:
+    #   set SEATING_DEBUG=true   (Windows)   /   export SEATING_DEBUG=true (Linux/Mac)
     debug_mode = os.environ.get("SEATING_DEBUG", "false").lower() == "true"
     app.run(debug=debug_mode)
