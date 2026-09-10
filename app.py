@@ -43,9 +43,9 @@ def allowed_file(filename):
 
 def get_db():
     db = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
+        host="mysql-327373d5-aksharachenchu64-4f5c.f.aivencloud.com",
+        user="avnadmin",
+        password="AVNS_hrx3s4aA8UJAPur5YON",
         database="seating_db"
     )
     return db
