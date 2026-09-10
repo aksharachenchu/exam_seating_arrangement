@@ -46,7 +46,7 @@ def get_db():
         host="mysql-327373d5-aksharachenchu64-4f5c.f.aivencloud.com",
         user="avnadmin",
         password="AVNS_hrx3s4aA8UJAPur5YON",
-        database="seating_db"
+        database="defaultdb"
     )
     return db
 
