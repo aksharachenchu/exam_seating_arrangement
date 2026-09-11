@@ -42,13 +42,15 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def get_db():
-    db = mysql.connector.connect(
-        host="mysql-327373d5-aksharachenchu64-4f5c.f.aivencloud.com",
-        user="avnadmin",
-        password="AVNS_hrx3s4aA8UJAPur5YON",
-        database="defaultdb"
+    return mysql.connector.connect(
+        host=os.environ.get("DB_HOST"),
+        user=os.environ.get("DB_USER"),
+        password=os.environ.get("DB_PASSWORD"),
+        database=os.environ.get("DB_NAME"),
+        port=25060,
+        ssl_disabled=False
     )
-    return db
+   # return db
 
 # ============================================
 # ACCESS CONTROL HELPERS
