@@ -43,12 +43,14 @@ def allowed_file(filename):
 
 def get_db():
     return mysql.connector.connect(
-        host=os.environ.get("DB_HOST"),
-        user=os.environ.get("DB_USER"),
-        password=os.environ.get("DB_PASSWORD"),
-        database=os.environ.get("DB_NAME"),
-        port=14103,
-        ssl_disabled=False
+        host=os.environ.get("DB_HOST", "").strip(),
+        user=os.environ.get("DB_USER", "").strip(),
+        password=os.environ.get("DB_PASSWORD", "").strip(),
+        database=os.environ.get("DB_NAME", "").strip(),
+        port=int(os.environ.get("DB_PORT", "14103")),
+        ssl_disabled=False,
+        connection_timeout=20
+    )
     )
    # return db
 
