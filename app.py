@@ -52,6 +52,14 @@ def get_db():
         connection_timeout=20
     )
    # return db
+@app.route("/test-env")
+def test_env():
+    return f"""
+    DB_HOST = {repr(os.environ.get('DB_HOST'))}<br>
+    DB_PORT = {repr(os.environ.get('DB_PORT'))}<br>
+    DB_NAME = {repr(os.environ.get('DB_NAME'))}<br>
+    DB_USER = {repr(os.environ.get('DB_USER'))}
+    """
 
 # ============================================
 # ACCESS CONTROL HELPERS
