@@ -51,7 +51,6 @@ def get_db():
         ssl_disabled=False,
         connection_timeout=20
     )
-    )
    # return db
 
 # ============================================
